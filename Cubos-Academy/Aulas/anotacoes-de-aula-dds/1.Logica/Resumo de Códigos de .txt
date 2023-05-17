@@ -1,0 +1,666 @@
+#   if / else
+
+        [A condicional if é uma estrutura condicional que executa a afirmação, dentro do bloco, 
+        se determinada condição for verdadeira. Se for falsa, executa as afirmações dentro de else.]
+
+        # [Exemplo]
+            const idade     = 29;
+
+            if (idade >= 18){
+                console.log(`É maior de idade.`);
+            } else {
+                console.log(`É menor de idade.`);
+            }
+            console.log(`Fim do Código.`);
+
+    # [Conseito de Truthness]
+        [Em JavaScript, um valor truthy é um valor que se traduz em verdadeiro quando avaliado em
+        um contexto Booleano. Todos os valores são truthy a menos que eles sejam definidos como 
+         falsy (ou seja., exceto para false, 0, "", null, undefined, e NaN).]
+        
+        # Exemplos de valores truthy em JavaScript (que se traduzirão em true, e então executar o bloco if):
+
+            if (true)
+            if ({})
+            if ([])
+            if (42)
+            if ("foo")
+            if (new Date())
+            if (-42)
+            if (3.14)
+            if (-3.14)
+            if (Infinity)
+            if (-Infinity)
+
+        # [Exemplo]
+            const x = 18;
+
+            if (x){
+                console.log(`Truthy`);
+            } else {
+                console.log(`Falsy`);
+            }
+
+
+#   Ternário
+        [Cria uma variável `var` e atribui `if true` caso `argumento` seja verdadeiro ou `if false` caso o `argumento` seja falso.]
+        var = (argumento ? if true : if false);
+
+        [Exemplo]
+        const saldo     = 10;
+        const unidade   = (saldo === 1 ? `real` : `reais`); // x = (teste ? if true : if false);
+        console.log(`Você te ${saldo} ${unidade}.`);
+
+
+#   For de C
+        [Percorre um Array de `i` em `i`, até `i` < `arg`, fazendo `i++`.]
+        for (let i = 0; i  < arg; i++){ 
+            // Código...
+        }
+
+        [Exemplo]
+        const nomeDeEstudantes = ['josé', 'joão', 'maria', 'joana', 'andreia', 'alice'];
+        for (let i = 0; i  < nomeDeEstudantes.length; i++){ // while true, do.
+            console.log(nomeDeEstudantes[i]);
+        }
+
+
+#   For of
+        [Percorre cada `item` do `array`.]
+        for (let item of array){
+            // Código....
+        }
+
+        [Exemplo]
+        const nomes = ['josé', 'joão', 'maria', 'joana', 'andreia', 'alice'];
+        for (let nome of nomes){
+            console.log(nome);
+        }
+
+
+#   Push / Pop
+        [O método push() adiciona um ou mais elementos ao final de um array e retorna o novo comprimento desse array.]
+
+        [O método pop() remove o último elemento de um array e retorna aquele elemento.]
+        
+        [Exemplo]
+            const nomeDeEstudantes = ['josé', 'joão', 'maria', 'joana', 'andreia', 'alice'];
+            nomeDeEstudantes.push('iago');
+            console.log(nomeDeEstudantes);
+            nomeDeEstudantes.pop();
+            console.log(nomeDeEstudantes);  
+
+
+#   Shitf / Unshift
+        [O método shift() remove o primeiro elemento de um array e retorna esse elemento.
+        Este método muda o tamanho do array.]
+
+        [O método unshift() adiciona um ou mais elementos no início de um array e retorna 
+        o número de elementos (propriedade length) atualizado.]
+        
+        [Exemplo]
+        const nomeDeEstudantes = ['josé', 'joão', 'maria', 'joana', 'andreia', 'alice'];
+        nomeDeEstudantes.unshift('iago')
+        console.log(nomeDeEstudantes);
+        nomeDeEstudantes.shift();
+        console.log(nomeDeEstudantes);
+
+
+#   While
+        [Realiza o `Código` enquanto `arg` for verdade.]
+        while (arg){
+            Código ...
+        }
+
+        [Exemplo]
+        const nomeDeEstudantes = ['josé', 'joão', 'maria', 'joana', 'andreia', 'alice'];
+        let indice = 0;
+        while (indice < nomeDeEstudantes.length){ // while true, do.
+            console.log(nomeDeEstudantes[indice]);
+        }
+
+
+#   Objeto
+            [Exemplo]
+                const pessoa = {
+                    nome    : `Iago`,
+                    idade   : 27,
+                    altura  : 1.83,
+                    peso    : 72.5
+                }
+                console.log(`Meu nome é ${pessoa.nome}, tenho ${pessoa[`idade`]} anos, ${pessoa.altura} metros e peso ${pessoa[`peso`]}.`);
+
+
+#   Shorthand
+        [Exemplo]    
+            const moto = {
+                marca   : `Harley Davidson`,
+                ano     : 2024,
+                motor   : 114
+                }
+            const pessoa = {
+                nome     : `Iago`,
+                idade    : 27,
+                altura   : 1.83,
+                temCnh   : true,
+                apelidos : [`IG`],
+                moto
+            }
+
+            console.log(pessoa);
+
+
+#   Desestruturação / Destructuring  [Objetos]
+        [Exemplo]
+            const pessoa = {
+                nome     : `Iago`,
+                idade    : 27,
+                altura   : 1.83,
+                temCnh   : true,
+            }
+
+            const {nome, idade, ... outros} = pessoa;
+
+            console.log(nome, idade);
+            console.log(outros);
+
+
+#   Spread Operator
+        [Exemplo]    
+            const pessoa = {
+                nome: `Iago`,
+                idade: 27,
+                cidade: `Salvador`,
+                profissao: `DEV`
+            }
+
+            const endereco = {
+                rua: `Aqui`,
+                numero: 42,
+                bairro: `Madureira`
+            }
+
+            const objFundido = {
+                ... pessoa,
+                ... endereco
+            }
+
+            console.log(objFundido);
+
+
+#   Desestruturação / Destructuring  [Arrays]
+        [Exemplo]
+            const array = [1,2,3,4,5,6];
+            // const [a, ...resto, b] = array; // não funciona
+            const [a, b, ...resto] = array; // resto tem que ser o ultimo
+
+
+#   Metodos de Objetos
+        [Exemplo]    
+            const user = {
+                nome: `Iago`,
+                idade: 27,
+                altura: 183,
+                profissao: `DEV-FullStack`,
+                faixaEtaria: function (){
+                    if (this.idade <= 21){
+                        return `Jovem`;
+                    } else if (this.idade < 65){
+                        return `Adulto(a)`
+                    } else{
+                        return `Idoso(a)`;
+                    }
+                }, 
+                apresentacao: function (){
+                    console.log(`Olá! Meu nome é ${this.nome}, sou um(a) ${this.faixaEtaria()} de ${this.idade} anos, 
+                    tenho ${this.altura} centimetros de altura e sou ${this.profissao}.`);
+                }
+            }
+
+            user.apresentacao();
+
+
+#   Método de Array/String `.includes()`
+        [O método includes() determina se um array contém um determinado elemento,
+        retornando true ou false apropriadamente.]
+
+        array.includes(searchElement[, fromIndex])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+        [Exemplo]
+            const frase = `Estou aprendendo a programar na Cubos Academy.`;
+            console.log(frase.includes(`Cubos`, 10)); // true
+            console.log(frase.includes(`cubos`)); // false
+
+
+#   Método de Array/String `.indexOf()`
+        
+        [O método indexOf() retorna o primeiro índice em que o elemento pode ser encontrado no array,
+        retorna -1 caso o mesmo não esteja presente.]
+
+        array.indexOf(searchElement[, fromIndex = 0])
+        
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+
+        [Exemplo]
+            const email = `email@valido.com`;
+
+            if (email.includes(`@`)){
+                if (email.includes(`.`, email.indexOf(`@`))){
+                    console.log(`Email atende requisição.`);
+                } else {
+                console.log(`Email não atende requisição.`);
+                }
+            } else {
+                console.log(`Email não atende requisição.`);
+            }
+
+
+#   Método de Array/String `.lastIndexOf()`
+        [O método lastIndexOf() retorna o ultimo índice que um certo elemento pode
+        ser encontrado no array, ou -1 se o elemento não estiver presente. O array é
+        pesquisado de trás para frente, começando pelo fromIndex.]
+
+        arr.lastIndexOf(searchElement[, fromIndex = arr.length - 1])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
+
+        [Exemplo]
+            let array = [2, 5, 9, 2];
+            array.lastIndexOf(2);     // 3
+            array.lastIndexOf(7);     // -1
+            array.lastIndexOf(2, 3);  // 3
+            array.lastIndexOf(2, 2);  // 0
+            array.lastIndexOf(2, -2); // 0
+            array.lastIndexOf(2, -1); // 3
+
+
+#   Método de String `.slice()`
+        [O método slice() extrai uma parte de uma string e a retorna 
+        como uma nova string, sem modificar a string original.]
+
+        str.slice(startIndex[, endIndex])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+
+        [Exemplo]
+            const str = 'The quick brown fox jumps over the lazy dog.';
+
+            console.log(str.slice(31));
+            // Expected output: "the lazy dog."
+
+            console.log(str.slice(4, 19));
+            // Expected output: "quick brown fox"
+
+            console.log(str.slice(-4));
+            // Expected output: "dog."
+
+            console.log(str.slice(-9, -5));
+            // Expected output: "lazy"
+
+
+#   Método de String `.replace()`
+
+        [O método replace() retorna uma nova string com algumas ou todas as correspondências de um 
+        padrão substituídas por um determinado caractere (ou caracteres). O padrão pode ser uma string 
+        ou uma RegExp, e a substituição pode ser uma string ou uma função a ser chamada para cada 
+        correspondência. Se o padrão for uma string, apenas a primeira ocorrência será substituída.]
+
+        str.replace(regexp|substr, newSubStr|function)
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace
+
+        [Exemplo]
+            const texto = `Eu adoro a Lorena, adoro muito!`;
+            const textoNovo = texto.replace(`adoro`, `amo`);
+
+            console.log(texto);
+            console.log(textoNovo);
+
+
+#   Método de String `.toUpperCase()`
+        [O método toUpperCase() retorna o valor da string original convertido em letras maiúsculas.]
+
+        str.toUpperCase()
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+
+        [Exemplo]
+            console.log('alfabeto'.toUpperCase()); 
+            // Expected output: 'ALFABETO'
+
+
+#   Método de String `.toLowerCase()`
+        [O método toLowerCase() retorna o valor da string que foi chamada convertido para minúsculo.]
+
+        str.toLowerCase()
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+        [Exemplo]
+            console.log('ALFABETO'.toLowerCase()); 
+            // Expected output: 'alfabeto'
+
+
+#   Método de String `.trim()`
+        [O método trim() remove os espaços em branco (whitespaces) do início e/ou fim de um texto. 
+        É considerado espaço em branco (espaço, tabulação, espaço fixo/rígido, etc.) e todo sinal 
+        de fim de linha de texto (LF, CR, etc.).]
+
+        str.trim()
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/trim
+
+        [Exemplo]
+            const greeting = '   Hello world!   ';
+            console.log(greeting);
+            // Expected output: "   Hello world!   ";
+            console.log(greeting.trim());
+            // Expected output: "Hello world!";
+
+
+#   Método de String `.padStart()`
+        [O método padStart() preenche a string original com um determinado caractere, ou 
+        conjunto de caracteres, (várias vezes, se necessário) até que a string resultante 
+        atinja o comprimento fornecido. O preenchimento é aplicado antes do primeiro caractere 
+        da string original. A string original não é modificada.]
+
+        str.padStart(targetLength [, padString])
+
+        [Referencia MDN]  
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+
+        [Exemplo]
+            const ultimo4dig = `2345`;
+            const numCartao = ultimo4dig.padStart(19, `**** `);
+            console.log(numCartao);
+
+
+#   Método de String `.split()`
+        [O método split() divide uma String em uma lista ordenada de substrings, 
+        coloca essas substrings em um array e retorna o array. A divisão é feita 
+        procurando um padrão, onde o padrão é fornecido como o primeiro parâmetro 
+        na chamada do método.]
+
+        str.split([separator[, limit]])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split
+
+        [Exemplo]
+            const str = 'The quick brown fox jumps over the lazy dog.';
+
+            const words = str.split(' ');
+            console.log(words[3]);
+            // Expected output: "fox"
+
+            const chars = str.split('');
+            console.log(chars[8]);
+            // Expected output: "k"
+
+            const strCopy = str.split();
+            console.log(strCopy);
+            // Expected output: Array ["The quick brown fox jumps over the lazy dog."]
+
+
+#   Método de Array `.reverse()`
+        [O método reverse() inverte os itens de um array. O primeiro elemento do array 
+        se torna o último e o último torna-se o primeiro.]
+
+        arr.reverse()
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
+
+        [Exemplo]
+            const opcoes    = [`Eu`, `Você`, `Ele`];
+            const resultado = opcoes.reverse();
+            console.log(resultado);
+            console.log(opcoes);
+
+
+#   Método de Array `.join()`
+        [O método join() junta todos os elementos de um array (ou um array-like object) em uma 
+        string e retorna esta string.]
+
+        arr.join([separador = ','])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join
+
+        [Exemplo]
+        const elements = ['Fire', 'Air', 'Water'];
+
+        console.log(elements.join());
+        // Expected output: "Fire,Air,Water"
+
+        console.log(elements.join(''));
+        // Expected output: "FireAirWater"
+
+        console.log(elements.join('-'));
+        // Expected output: "Fire-Air-Water"
+
+
+#   Método de Array `.concat()`
+        [O método concat() retorna um novo array contendo todos os arrays ou valores 
+        passados como parâmetro.]
+        
+        arr.concat(valor1, valor2, ..., valorN)
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+
+        [Exemplo]
+            const array1 = ['a', 'b', 'c'];
+            const array2 = ['d', 'e', 'f'];
+            const array3 = array1.concat(array2);
+
+            console.log(array3);
+            // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+
+
+#   Método de Array `.slice()`
+        [O método slice() retorna uma cópia de parte de um array a partir de um subarray 
+        criado entre as posições início e fim (fim não é incluído) de um array original. 
+        O Array original não é modificado].
+
+        str.slice(startIndex[, endIndex])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+
+        [Exemplo]
+            const animals = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+            console.log(animals.slice(2));
+            // Expected output: Array ["camel", "duck", "elephant"]
+            console.log(animals.slice(2, 4));
+            // Expected output: Array ["camel", "duck"]
+            console.log(animals.slice(1, 5));
+            // Expected output: Array ["bison", "camel", "duck", "elephant"]
+            console.log(animals.slice(-2));
+            // Expected output: Array ["duck", "elephant"]
+            console.log(animals.slice(2, -1));
+            // Expected output: Array ["camel", "duck"]
+            console.log(animals.slice());
+            // Expected output: Array ["ant", "bison", "camel", "duck", "elephant"]
+
+
+#   Método de Array `.splice()`
+            [O método splice() altera o conteúdo de uma lista, adicionando 
+            novos elementos enquanto remove elementos antigos.]
+
+            array.splice(indice[, deleteCount[, elemento1[, ...[, elementoN]]]])
+
+            [Referencia MDN]
+            https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
+            [Exemplo]
+                const months = ['Jan', 'March', 'April', 'June'];
+                months.splice(1, 0, 'Feb');
+                // Inserts at index 1
+                console.log(months);
+                // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+                months.splice(4, 1, 'May');
+                // Replaces 1 element at index 4
+                console.log(months);
+                // Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+
+
+#   Método de Array `.every()`
+        [O método every() testa se todos os elementos do array passam pelo 
+        teste implementado pela função fornecida. Este método retorna um 
+        valor booleano].
+
+        arr.every(callback[, thisArg])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/every
+
+        [Exemplo]
+            const frutas = [`Abacaxi`, `Manga`, `Melancia`]
+            const resultado = frutas.every((elementoAtual)=>{
+                return elementoAtual !== `Banana`;
+            }) 
+            console.log(resultado);
+
+
+#   Método de Array `.some()`   
+        O método some() testa se ao menos um dos elementos no 
+        array passa no teste implementado pela função atribuída 
+        e retorna um valor true ou false.
+
+        arr.some(callback[, thisArg])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/some
+
+        [Exemplo]
+            const nomes = ['José', 'Pedro', 'Maria', 'João', 'Ana', 'Bárbara', 'Joana'];
+
+            const resultado = nomes.some((nome) =>{
+                return nome === `João`
+            })
+
+            console.log(resultado);
+
+
+#   Método de Array `.find()`
+        [O método find() retorna o valor do primeiro elemento 
+        do array que satisfizer a função de teste provida. 
+        Caso contrario, undefined é retornado.]
+
+        arr.find(callback(element[, index[, array]])[, thisArg])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/find
+        
+        [Exemplo]
+            const array1 = [5, 12, 8, 130, 44];
+            const found = array1.find(element => element > 10);
+            console.log(found);
+            // Expected output: 12
+
+
+#   Método de Array `.findIndex()`
+        [O método findIndex() retorna o índice no array do primeiro elemento 
+        que satisfizer a função de teste provida. Caso contrário, retorna -1, 
+        indicando que nenhum elemento passou no teste.]
+
+        arr.findIndex(callback[, thisArg])
+
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
+        
+        [Exemplo]
+            const carros = [
+                {nome: `Hilux` ,ano: `2022` ,marca: `Toyota` ,cor: `Prata`}, 
+                {nome: `Yaris Sedan`,ano: `2023` ,marca: `Toyota`,cor: `Preto` }, 
+                {nome: `Cruze`,ano: `2021`,marca: `Chevrolet`,cor: `Branco`}, 
+                {nome: `Trail Blazer`,ano: `2023`,marca: `Chevrolet`,cor: `Azul`},
+                {nome: `F-150 Lariat`,ano: `2023`,marca: `Ford`,cor: `Preto Fosco`},
+                {nome: `Ranger CLS 4x4`,ano: `2023`,marca: `Ford`,cor: `Vermelho`},
+            ]
+
+            const encontraIndex = (array, nome) =>{
+                return array.findIndex((carro) => carro.nome === nome);
+            }
+
+            console.log(encontraIndex(carros, `Chevy`));
+
+
+#   Método de Array `.filter()`
+        [O método filter() cria um novo array com todos os 
+        elementos que passaram no teste implementado pela 
+        função fornecida.]
+
+        const newArray = arr.filter(callback[, thisArg])
+        
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+        
+        [Exemplo]
+            const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+            const result = words.filter(word => word.length > 6);
+            console.log(result);
+            // Expected output: Array ["exuberant", "destruction", "present"]
+
+    
+#   Método de Array `.map()`
+        [O método map() invoca a função callback passada por 
+        argumento para cada elemento do Array e devolve um novo 
+        Array como resultado.]
+
+        arr.map(callback[, thisArg])
+        
+        [Referencia MDN]
+        https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+        
+        [Exemplo]
+            const usuarios = [
+                {nome: `Iago`, sobrenome: `Ruas`, idade: 27},
+                {nome: `Lorena`,sobrenome: `Santiago`,idade: 27},
+                {nome: `Beatriz`,sobrenome: `Ruas`,idade: 24}
+            ]
+            const corrigeNome = (array) =>{
+                return array.map((usuario) =>  {
+                    return{
+                        nomeCompleto: `${usuario.nome} ${usuario.sobrenome}`, 
+                        idade: usuario.idade
+                    } 
+                })
+            }
+            console.log(usuarios);
+            console.log(corrigeNome(usuarios));
+
+
+#   Método de Array `.()`
+        []
+
+        
+        
+        [Referencia MDN]
+
+        
+        [Exemplo]
+   
+    
+#   Método de Array `.()`
+        []
+
+        
+        
+        [Referencia MDN]
+
+        
+        [Exemplo]
+    
+  
